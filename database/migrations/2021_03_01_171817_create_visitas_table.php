@@ -15,7 +15,11 @@ class CreateVisitasTable extends Migration
     {
         Schema::create('visitas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('destino');
+            $table->string('origen');
+            $table->string('dia');
+            $table->string('mes');
+            $table->string('year');
         });
     }
 

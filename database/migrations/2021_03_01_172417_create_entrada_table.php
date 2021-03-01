@@ -15,6 +15,10 @@ class CreateEntradaTable extends Migration
     {
         Schema::create('entrada', function (Blueprint $table) {
             $table->id();
+            $table->string('titulo');
+            $table->string('img');
+            $table->text('descripcionCorta');
+            $table->text('Contenido');
             $table->timestamps();
         });
     }

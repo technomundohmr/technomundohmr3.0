@@ -15,6 +15,13 @@ class CreatePaginaWebTable extends Migration
     {
         Schema::create('pagina_web', function (Blueprint $table) {
             $table->id();
+            $table->string('usuario');
+            $table->string('telefono');
+            $table->string('direccion');
+            $table->string('email');
+            $table->string('tipoNegocio');
+            $table->text('servicioDetallado');
+            $table->string('afiliado');
             $table->timestamps();
         });
     }

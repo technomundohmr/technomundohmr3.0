@@ -15,6 +15,9 @@ class CreateCorreosTable extends Migration
     {
         Schema::create('correos', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('email');
+            $table->string('interes');
             $table->timestamps();
         });
     }
