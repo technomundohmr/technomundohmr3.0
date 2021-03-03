@@ -19,6 +19,7 @@ class CreateServiciosTable extends Migration
             $table->string('img');
             $table->text('descripcion');
             $table->string('icono');
+            $table->string('url');
             $table->timestamps();
         });
     }

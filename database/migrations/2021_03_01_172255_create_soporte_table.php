@@ -13,7 +13,7 @@ class CreateSoporteTable extends Migration
      */
     public function up()
     {
-        Schema::create('soporte', function (Blueprint $table) {
+        Schema::create('soportes', function (Blueprint $table) {
             $table->id();
             $table->string('usuario');
             $table->string('tipoServicio');

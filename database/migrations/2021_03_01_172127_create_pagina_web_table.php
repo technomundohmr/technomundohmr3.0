@@ -13,7 +13,7 @@ class CreatePaginaWebTable extends Migration
      */
     public function up()
     {
-        Schema::create('pagina_web', function (Blueprint $table) {
+        Schema::create('pagina_webs', function (Blueprint $table) {
             $table->id();
             $table->string('usuario');
             $table->string('telefono');

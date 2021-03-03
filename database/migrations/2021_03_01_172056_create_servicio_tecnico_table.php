@@ -13,7 +13,7 @@ class CreateServicioTecnicoTable extends Migration
      */
     public function up()
     {
-        Schema::create('servicio_tecnico', function (Blueprint $table) {
+        Schema::create('servicio_tecnicos', function (Blueprint $table) {
             $table->id();
             $table->string('user');
             $table->string('telefono');

@@ -13,7 +13,7 @@ class CreatePortafolioWebTable extends Migration
      */
     public function up()
     {
-        Schema::create('portafolio_web', function (Blueprint $table) {
+        Schema::create('portafolio_webs', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
             $table->string('img');

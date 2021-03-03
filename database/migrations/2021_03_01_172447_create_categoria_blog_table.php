@@ -13,7 +13,7 @@ class CreateCategoriaBlogTable extends Migration
      */
     public function up()
     {
-        Schema::create('categoria_blog', function (Blueprint $table) {
+        Schema::create('categoria_blogs', function (Blueprint $table) {
             $table->id();
             $table->string('categoria');
             $table->string('img');

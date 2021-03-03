@@ -13,7 +13,7 @@ class CreateCategoriasTiendaTable extends Migration
      */
     public function up()
     {
-        Schema::create('categorias_tienda', function (Blueprint $table) {
+        Schema::create('categorias_tiendas', function (Blueprint $table) {
             $table->id();
             $table->string('categoria');
             $table->string('img');

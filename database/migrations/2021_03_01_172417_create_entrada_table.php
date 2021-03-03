@@ -13,7 +13,7 @@ class CreateEntradaTable extends Migration
      */
     public function up()
     {
-        Schema::create('entrada', function (Blueprint $table) {
+        Schema::create('entradas', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
             $table->string('img');

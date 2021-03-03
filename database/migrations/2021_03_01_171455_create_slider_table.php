@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class CreateSliderTable extends Migration
 {
     /**
@@ -13,8 +14,9 @@ class CreateSliderTable extends Migration
      */
     public function up()
     {
-        Schema::create('slider', function (Blueprint $table) {
+        Schema::create('sliders', function (Blueprint $table) {
             $table->id();
+            $table->string('url');
             $table->string('img');
             $table->timestamps();
         });
