@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\rc;
 use Illuminate\Http\Request;
-
+use App\Servicio;
+use Illuminate\Support\Facades\Storage;
 class Servicios extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class Servicios extends Controller
      */
     public function index()
     {
-        //
+        $datos['servicios'] = Servicio::all();
+        return view('cms.main.servicios',$datos);
     }
 
     /**
@@ -24,7 +26,8 @@ class Servicios extends Controller
      */
     public function create()
     {
-        //
+        $datos['servicios'] = Servicio::all();
+        return view('cms.main.createServicios', $datos);
     }
 
     /**
@@ -35,7 +38,12 @@ class Servicios extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos=request()->except('_token');
+        if ($request->hasFile('img')) {
+            $datos['img']=$request->file('img')->store('uploads','public');
+        }
+        Servicio::insert($datos);
+        return redirect('servicios/create');
     }
 
     /**
@@ -55,9 +63,10 @@ class Servicios extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function edit(rc $rc)
+    public function edit($id)
     {
-        //
+        $servicio = Servicio::findOrFail($id);
+        return view('cms.main.editServicios', compact('servicio'));
     }
 
     /**
@@ -67,9 +76,16 @@ class Servicios extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, rc $rc)
+    public function update(Request $request, $id)
     {
-        //
+        $datos=request()->except('_token', '_method');
+        $servicio = Servicio::findOrFail($id);
+        if ($request->hasFile('img')) {
+            $datos['img']=$request->file('img')->store('uploads','public');
+            Storage::delete('public/'.$servicio->img);
+        }    
+        Servicio::where('id','=',$id)->update($datos);
+        return redirect('servicios/create');
     }
 
     /**
@@ -78,8 +94,11 @@ class Servicios extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function destroy(rc $rc)
+    public function destroy($id)
     {
-        //
+        $dato = Servicio::findOrFail($id);
+        Storage::delete('public/'.$dato->img);
+        Servicio::destroy($id);
+        return redirect('servicios/create');
     }
 }
