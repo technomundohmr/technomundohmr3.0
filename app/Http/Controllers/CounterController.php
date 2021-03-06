@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Counter;
 use App\rc;
 use Illuminate\Http\Request;
-use App\Slider;
-use Illuminate\Support\Facades\Storage;
-class SliderMain extends Controller
+
+class CounterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class SliderMain extends Controller
      */
     public function index()
     {
-        $datos['imgs'] = Slider::all();
-        return view('cms.main.sliderMain',$datos);
+        $datos['metricas'] = Counter::all();
     }
 
     /**
@@ -26,8 +25,8 @@ class SliderMain extends Controller
      */
     public function create()
     {
-        $datos['imgs'] = Slider::paginate(10);
-        return view('cms.main.createSlider', $datos);
+        $datos['metricas'] = Counter::all();
+        return view('cms.main.crearCounter',$datos);
     }
 
     /**
@@ -39,11 +38,8 @@ class SliderMain extends Controller
     public function store(Request $request)
     {
         $datos=request()->except('_token');
-        if ($request->hasFile('img')) {
-            $datos['img']=$request->file('img')->store('uploads','public');
-        }
-        Slider::insert($datos);
-        return redirect('sliderMain/create');
+        Counter::insert($datos);
+        return redirect('counter/create');
     }
 
     /**
@@ -52,9 +48,12 @@ class SliderMain extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function show(rc $rc)
+    public function show($id)
     {
-        //
+        $dato = Counter::findOrFail($id);
+        $visitas = $dato['visitas'] + 1;
+        Counter::where('id','=',$id)->update(['visitas'=>$visitas]);
+        return redirect($dato['destino']);
     }
 
     /**
@@ -63,9 +62,9 @@ class SliderMain extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function edit(rc $rc)
+    public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -83,14 +82,12 @@ class SliderMain extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Slider  $slider
+     * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $dato = Slider::findOrFail($id);
-        Storage::delete('public/'.$dato->img);
-        Slider::destroy($id);
-        return redirect('sliderMain/create');
+        Counter::destroy($id);
+        return redirect('counter/create');
     }
 }

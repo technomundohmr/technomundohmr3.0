@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-
-class CreateSliderTable extends Migration
+class CreateCounterTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +13,13 @@ class CreateSliderTable extends Migration
      */
     public function up()
     {
-        Schema::create('sliders', function (Blueprint $table) {
+        Schema::create('counters', function (Blueprint $table) {
             $table->id();
-            $table->string('url');
-            $table->string('img');
+            $table->string('origen');
+            $table->string('destino');
+            $table->string('lead');
+            $table->string('landing');
+            $table->integer('visitas');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateSliderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('slider');
+        Schema::dropIfExists('_counter');
     }
 }

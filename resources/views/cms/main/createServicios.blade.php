@@ -39,6 +39,8 @@
                     <tr class="table-primary">
                         <th>Titulo</th>
                         <th>Descripcion</th>
+                        <th></th>
+                        <th></th>
                         <th>Icono</th>
                         <th>Imagen</th>
                         <th>url</th>
@@ -50,9 +52,9 @@
                     @foreach ($servicios ?? '' as $servicio)
                         <tr>
                             <td>{{ $servicio->titulo }}</td>
-                            <td>{{ $servicio->descripcion }}</td>
+                            <td colspan="3">{{ $servicio->descripcion }}</td>
                             <td class="display-3"><i class="{{ $servicio->icono }}"></i></td>
-                            <td><img src="{{ asset('storage') . '/' . $servicio->img }}" alt="" width="50%" loading="lazy"
+                            <td><img src="{{ asset('storage') . '/' . $servicio->img }}" alt="" width="60%" loading="lazy"
                                     class="mx-auto"></td>
                             <td>{{ $servicio->url }}</td>
                             <td>
