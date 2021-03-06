@@ -9,6 +9,8 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4b3b6a7018.js" crossorigin="anonymous"></script>
     <title>@yield('title')</title>
+    <link rel="shortcut icon" href="{{url('img/iconotechnomundo.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url('css/estilos.css')}}">
 </head>
 
 <body>

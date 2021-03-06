@@ -1,0 +1,416 @@
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+.tachado{
+    text-decoration: line-through;
+}
+
+/*---*/
+/*---*/
+.banner2 li:hover{
+    border-bottom: 3px solid blue;
+}
+.banner2 a:hover{
+    color: blue;
+    border-bottom: 3px solid blue;
+}
+.banner2 a {
+    text-decoration: none;
+    color: #018abd;
+}
+.banner2 label {
+    display: none;
+}
+.banner2 ul{
+    
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+/*---*/
+/*banner2*/
+/*---*/
+
+/*--*/
+/*slider*/
+/*--*/
+/*--*/
+/*slider*/
+/*--*/
+
+/*--*/
+/*body*/
+/*--*/
+.linkTienda{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+.linkTienda p{
+    width: 60%;
+    margin: auto;
+    font-style: italic;
+}
+.linkTienda a{
+    text-align: center;
+    text-decoration: none;
+}
+.linkTienda img:hover{
+    position: relative;
+}
+.linkTienda img{
+    position: relative;
+}
+#webdesign{
+    background-color: #dde8f0;
+    display: flex;
+}
+.imagenParrafo{
+    width: 60%;
+}
+.parrafo{
+    display: flex;
+    width: 40%;
+    padding: 30px;
+    text-align: center;
+    align-items: center;
+    
+}
+.parrafo a{
+    text-decoration: none;
+    color: black;
+    align-items: center;
+}
+.verMas{
+    border-radius: 20px;
+    background-color: red;
+    color:white;
+    width: 35%;
+    padding: 5px;
+    margin: auto;
+    text-align: center;
+}
+.seccionfoto{
+    background-image:url(../img/empresa.jpeg);
+    width: 100%;
+    background-size:100%;
+}
+.contenido a{
+    text-decoration: none;
+    color: white;
+}
+.contenido{
+    width: 50%;
+    text-align: center;
+    padding: 120px 20px;
+}
+/*--*/
+/*body*/
+/*--*/
+.seccionfoto1{
+    background-image: url(../img/bodySoftware.jpg);
+    background-size: cover;
+}
+.seccionfoto2{
+    background-image: url(../img/technoempresas.jpeg);
+    background-size: cover;
+}
+.none{
+    display: none;
+}
+footer{
+    background-color: #96aab7;
+    text-align: center;
+}
+#redes span{
+    font-size: 34px;
+    margin: 10px 0; 
+}
+#redes a{
+    margin: 10px;
+    text-decoration: none;
+}
+.formularioSuscripcion{
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+}
+.formularioSuscripcion input{
+    border: 1px solid white;
+    padding: 5px;
+    margin: 5px 0px;
+}
+.suscribirse{
+    background: red;
+    color: white;
+    border-radius: 10px;
+    margin-top: 0!important;
+}
+.icon-youtube:hover{
+    color: red;
+}
+.icon-twitter:hover{
+    color: lightblue;
+}
+.icon-instagrem:hover{
+    background: linear-gradient(225deg,purple , yellow );
+    color: transparent;
+    background-clip: text;
+}
+.suscripcion h2{
+    margin: 10px;    
+}
+.suscripcion{
+    border-bottom: 1px solid black;
+}
+.mapaSitio a{
+    color:black;
+}
+.mapaSitio h3{
+    font-size: 20px; 
+    font-weight: bolder;
+}
+.legal{
+    margin-top: 10px;
+}
+.legal p{
+    text-align: center;
+    font-size: 10px;
+    border-left: 1px solid black;
+    
+}
+.legal a{
+    color: black;
+}
+.btnWhatsapp a{
+    text-decoration: none;
+    color: white;
+}
+.contactenos{
+    display: none;
+}
+.btnWhatsapp{
+    position: fixed;
+    right: 0;
+    top: 20%;
+    z-index: 1;
+    background: green;
+    font-size: 20px;
+    font-weight: bolder;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    padding: 10px;
+    margin: 0;
+    border: 3px solid white;
+}
+.icon-whatsapp{
+    font-size: 30px;
+}
+.cotizacion{
+    background-image: url(../img/imagen%20cotizacion.jpeg);
+    background-size:cover;
+    padding: 50px;
+    position: relative;
+    display: flex;
+}
+.formularioCotizacion{
+    width: 40%;
+    background: rgba(255,255,255,0.5);
+    position: relative;
+}
+.headerForm{
+    width: 55%;
+    position: relative; 
+}
+.headerForm h1{
+    display: flex;
+    align-content: center;
+    text-align: center;
+    margin-top: 10%; 
+    width: 70%;
+    color: #018abd;
+    font-weight: bold;
+    font-size: 42px;
+}
+.formularioCotizacion h5, .formularioCotizacion h4{
+    text-align: center;
+    width: 80%;
+    margin: 10px auto;
+}
+.formularioCotizacion p{
+    font-size: 10px;
+}
+.formularioCotizacion form{
+    
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin:auto;
+    padding: 20px;
+}
+.formularioCotizacion input{
+    margin: 15px 0px;   
+    padding: 7px;
+}
+.boton{
+    background-color: red;
+    width: 50%;
+    color:white;
+    margin: auto !important;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.parrafo1 a{
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+}
+.parrafo1{
+    text-align: justify;
+}
+.parrafo1 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+#precioWeb h1{
+    color: red;
+}
+.botonPrecio{
+    background-color: #018abd;
+    color: white;
+    width: 50%;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.botonPrecio:hover{
+    background-color: blue;
+}
+.circular{
+    border-radius: 50%;
+}
+@media (max-width : 840px){
+/*---*/
+/*banner1*/
+/*---*/
+    .banner1 p{
+        display: none;
+    }
+    .logo{
+        width:  25%;
+    }
+/*---*/
+/*banner1*/
+/*---*/
+
+/*---*/
+/*banner2*/
+/*---*/
+    .banner2{
+    margin: 70px 0%; 
+    
+    }
+    .menu{
+        margin-left: -100%;
+        
+    }
+    .banner2 label:hover{
+        cursor: pointer;
+    }
+    .banner2 label{
+        display: block;
+        position: fixed;
+        background: #018abd;
+        top: 50px;
+        color: white;
+        padding: 10px;
+        z-index: 1;    
+        font-size: 24px;
+    }
+    .banner2 ul{
+        top: 90px;
+        flex-direction: column;
+        background-color: #018abd;
+        width: 50%;
+        padding: 0px;
+        position: absolute;
+        z-index: 1;
+    }
+    .banner2 li{
+        padding: 20px;
+        color: white;
+        border-bottom: 1px solid white;
+    }
+    .banner2 li:hover{
+    background-color: blue;
+    }
+    .banner2 a:hover{
+        color: white;
+    }
+    .banner2 a{
+        color: white;
+        font-weight: bold;
+    }
+    #btnMenu:checked ~ .menu{
+        margin: 0;
+    }
+    /*---*/
+    /*banner2*/
+    /*---*/
+    #slider{
+        margin-top: 0;   
+    }
+    .sliderList img{
+        height: auto;
+    }
+
+     /*---*/
+    /*banner2*/
+    /*---*/
+    /*--*/
+    /*body*/
+    /*--*/
+    #webdesign{
+        display: block;
+    }
+    .imagenParrafo{
+        width: 100%;
+    }
+    .parrafo{
+        width: 100%;
+        
+    }
+    .contenido{
+        width: 100%;
+    }
+    .seccionfoto{
+        background-size: cover;
+    }
+    .cotizacion{
+        flex-direction: column;
+    }
+    .formularioCotizacion{
+        width: 100%;
+    }
+    .headerForm{
+        width: 100%;
+    }
+    .headerForm h1{
+        width: 100%;
+    }
+    .formularioCotizacion form{
+        padding: 10px 0px;
+        width: 90%;
+    }
+    /*--*/
+    /*body*/
+    /*--*/
+}
+.header1{
+    background: #8E2DE2 ;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2) ;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2) ; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
