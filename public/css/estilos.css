@@ -36,20 +36,14 @@
     display: flex;
 }
 .imagenParrafo{
-    width: 60%;
+    width: 50%;
 }
 .parrafo{
-    display: flex;
-    width: 40%;
+    width: 50%;
     padding: 30px;
     text-align: center;
     align-items: center;
     
-}
-.parrafo a{
-    text-decoration: none;
-    color: black;
-    align-items: center;
 }
 .verMas{
     border-radius: 20px;
@@ -197,15 +191,8 @@ footer{
     margin: 15px 0px;   
     padding: 7px;
 }
-.boton{
-    background-color: red;
-    width: 50%;
-    color:white;
-    margin: auto !important;
-    font-weight: bold;
-    border-radius: 10px;
-}
-.parrafo1 a{
+
+.parrafo1{
     text-decoration: none;
     color: black;
     margin: 0 10px;
@@ -216,19 +203,6 @@ footer{
 .parrafo1 h1{
     text-align: center;
     padding-top: 10px;
-}
-#precioWeb h1{
-    color: red;
-}
-.botonPrecio{
-    background-color: #018abd;
-    color: white;
-    width: 50%;
-    margin: auto;
-    padding: 5px;
-    text-align: center;
-    border-radius: 10px;
-    font-weight: bold;
 }
 .circular{
     border-radius: 50%;

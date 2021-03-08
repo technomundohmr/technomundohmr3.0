@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Correo;
+use App\cotizacionWeb;
 use App\rc;
 use Illuminate\Http\Request;
 
-class Correos extends Controller
+class cotizacionWebController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,9 @@ class Correos extends Controller
      */
     public function index()
     {
-        $datos['correos'] = Correo::all();
-        return view('cms.marketing.correos',$datos);
+        //
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +25,7 @@ class Correos extends Controller
      */
     public function create()
     {
-        //
+        return view('main.createCotizacionWeb');
     }
 
     /**
@@ -38,7 +37,7 @@ class Correos extends Controller
     public function store(Request $request)
     {
         $datos=request()->except('_token');
-        Correo::insert($datos);
+        cotizacionWeb::insert($datos);
         return redirect('/webPage');
     }
 
