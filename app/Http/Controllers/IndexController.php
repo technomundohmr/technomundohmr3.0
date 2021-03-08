@@ -10,4 +10,8 @@ class IndexController extends Controller
         $datos['servicios'] = Servicio::all();
         return view('main.index', $datos);
     }
+
+    public function webPage(){
+        return view('main.webPage');
+    }
 }

@@ -1,5 +1,6 @@
 @extends('cms.layout')
 @section('content')
+@include('cms.navbar')
     <div class="container p-5 my-5">
         <div class="row">
             <div class="col-md-3"></div>
@@ -76,4 +77,5 @@
             </table>
         </div>
     </div>
+    @include('cms.footer')
 @endsection

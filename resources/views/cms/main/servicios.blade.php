@@ -1,5 +1,6 @@
 @extends('cms.layout')
 @section('content')
+@include('cms.navbar')
     <div class="container">
         <div class="row my-5">
             <div class="">
@@ -32,4 +33,5 @@
             @endforeach
         </div>
     </div>
+    @include('cms.footer')
 @endsection

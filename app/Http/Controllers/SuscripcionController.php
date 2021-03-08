@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Correo;
-use App\rc;
+use App\Models\rc;
+use App\suscripcion;
 use Illuminate\Http\Request;
 
-class Correos extends Controller
+class SuscripcionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,8 @@ class Correos extends Controller
      */
     public function index()
     {
-        
+        $datos['suscripciones'] = suscripcion::all();
+        return view('cms.marketing.suscripciones',$datos);
     }
 
     /**
@@ -25,7 +26,6 @@ class Correos extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -36,13 +36,15 @@ class Correos extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos=request()->except('_token');
+        suscripcion::insert($datos);
+        return redirect('/');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\rc  $rc
+     * @param  \App\Models\rc  $rc
      * @return \Illuminate\Http\Response
      */
     public function show(rc $rc)
@@ -53,7 +55,7 @@ class Correos extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\rc  $rc
+     * @param  \App\Models\rc  $rc
      * @return \Illuminate\Http\Response
      */
     public function edit(rc $rc)
@@ -65,7 +67,7 @@ class Correos extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\rc  $rc
+     * @param  \App\Models\rc  $rc
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, rc $rc)
@@ -76,11 +78,12 @@ class Correos extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\rc  $rc
+     * @param  \App\Models\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function destroy(rc $rc)
+    public function destroy($id)
     {
-        //
+        suscripcion::destroy($id);
+        return redirect('suscripcion');
     }
 }
