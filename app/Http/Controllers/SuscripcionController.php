@@ -47,7 +47,7 @@ class SuscripcionController extends Controller
      * @param  \App\Models\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function show(rc $rc)
+    public function show($rc)
     {
         //
     }
@@ -58,7 +58,7 @@ class SuscripcionController extends Controller
      * @param  \App\Models\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function edit(rc $rc)
+    public function edit($rc)
     {
         //
     }
@@ -70,7 +70,7 @@ class SuscripcionController extends Controller
      * @param  \App\Models\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, rc $rc)
+    public function update(Request $request, $rc)
     {
         //
     }

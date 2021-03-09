@@ -15,7 +15,8 @@ class cotizacionWebController extends Controller
      */
     public function index()
     {
-        //
+        $datos['cotizaciones'] = cotizacionWeb::orderByDesc('id')->get();
+        return view('cms.main.cotizacionWeb',$datos);
     }
 
     /**
@@ -81,8 +82,9 @@ class cotizacionWebController extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function destroy(rc $rc)
+    public function destroy($id)
     {
-        //
+        cotizacionWeb::destroy($id);
+        return redirect('cotizacionWeb');
     }
 }

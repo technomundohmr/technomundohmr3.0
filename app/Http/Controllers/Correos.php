@@ -82,8 +82,9 @@ class Correos extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function destroy(rc $rc)
+    public function destroy($id)
     {
-        //
+        Correo::destroy($id);
+        return redirect('correo');
     }
 }

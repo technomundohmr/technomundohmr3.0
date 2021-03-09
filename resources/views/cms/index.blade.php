@@ -16,9 +16,18 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="botonCms bg-warning px-3 py-5 text-center m-2">
+                <div class="botonCms bg-warning
+                 px-3 py-5 text-center m-2">
                     <a href="{{url('/cotizacionWeb')}}">
                         <h3><span><i class="fas fa-network-wired display-3"></i></span> Cotizacion Web</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="botonCms bg-success
+                 px-3 py-5 text-center m-2">
+                    <a href="{{url('/cotizacionSoftware')}}">
+                        <h3><span><i class="fas fa-laptop-code display-3"></i></span> Cotizacion Software</h3>
                     </a>
                 </div>
             </div>
