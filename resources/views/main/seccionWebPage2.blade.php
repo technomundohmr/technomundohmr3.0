@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="linkTienda">
-                <a href="{{ url('/correoWeb') }}">
+                <a href="{{ url('/webPage') }}">
                     <div class="card text-dark">
                         <div class="card-body">
                             <h5 class="card-title"><img src="{{ url('img/selflearning.jpg') }}" alt="" class="circular"
@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-4">
             <div class="linkTienda">
-                <a href="{{ url('/correoWeb') }}">
+                <a href="{{ url('/webPage') }}">
                     <div class="card text-dark">
                         <div class="card-body">
                             <h5 class="card-title"><img src="{{ url('img/personaldesign.jpg') }}" alt=""
@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-4">
             <div class="linkTienda">
-                <a href="{{ url('/correoWeb') }}">
+                <a href="{{ url('/webPage') }}">
                     <div class="card text-dark">
                         <div class="card-body">
                             <h5 class="card-title"><img src="{{ url('img/mio.jpg') }}" alt=""

@@ -34,7 +34,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-2">  
                                         <div class="card p-4 w-100">
                                             <form action="{{ url('/cotizacionWeb/' . $cotizacion->id) }}" method="post">
                                                 {{ csrf_field() }}
@@ -47,6 +47,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <h5 class="card-title my-2"><strong>Afiliado: </strong> {{ $cotizacion->afiliado }}</h5>
                         </div>
                     </div>
                 @endforeach

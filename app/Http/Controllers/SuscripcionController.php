@@ -7,12 +7,17 @@ use App\suscripcion;
 use Illuminate\Http\Request;
 
 class SuscripcionController extends Controller
+
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth:loginCMS', ['only'=>'index','destroy']);
+    }
     public function index()
     {
         $datos['suscripciones'] = suscripcion::all();

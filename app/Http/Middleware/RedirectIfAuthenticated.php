@@ -18,8 +18,8 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME);
+        if (Auth::guard('loginCMS')->check()) {
+            return redirect(RouteServiceProvider::CMSADMIN);
         }
 
         return $next($request);

@@ -7,6 +7,13 @@
     @include('main.logoHeader')
 </header>
 <section>
+    @php
+        if(isset($_COOKIE['IDafiliado'])){
+            $afiliado = $_COOKIE['IDafiliado'];
+        }else{
+            $afiliado = "no";
+        }
+    @endphp
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
@@ -15,6 +22,9 @@
                 <h5 class="text-center">Al enviar este formulario un asesor se contactara contigo y nos encargaremos de todo</h5>
                 <form action="{{ url('/cotizacionWeb') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
+                    <div class="form-group">
+                        <input type="text" name="afiliado" id="afiliado" class="form-control" value="{{$afiliado}}" hidden>
+                    </div>
                     <div class="form-group">
                         <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" required>
                     </div>

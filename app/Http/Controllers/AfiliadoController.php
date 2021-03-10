@@ -2,27 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\cotizacionWeb;
 use App\rc;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cookie;
 
-class cotizacionWebController extends Controller
+class AfiliadoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth:loginCMS', ['only'=>'index','destroy']);
-    }
-
     public function index()
     {
-        $datos['cotizaciones'] = cotizacionWeb::orderByDesc('id')->get();
-        return view('cms.main.cotizacionWeb',$datos);
+        //
     }
 
     /**
@@ -30,10 +22,9 @@ class cotizacionWebController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        
-        return view('main.createCotizacionWeb');
+        //
     }
 
     /**
@@ -44,9 +35,7 @@ class cotizacionWebController extends Controller
      */
     public function store(Request $request)
     {
-        $datos=request()->except('_token');
-        cotizacionWeb::insert($datos);
-        return redirect('/webPage');
+        //
     }
 
     /**
@@ -89,9 +78,8 @@ class cotizacionWebController extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(rc $rc)
     {
-        cotizacionWeb::destroy($id);
-        return redirect('cotizacionWeb');
+        //
     }
 }

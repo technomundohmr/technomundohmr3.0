@@ -2,27 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\cotizacionWeb;
+use App\loginCMS;
 use App\rc;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Auth;
 
-class cotizacionWebController extends Controller
+class loginCMSController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest', ['only'=>'index']);
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth:loginCMS', ['only'=>'index','destroy']);
-    }
-
     public function index()
     {
-        $datos['cotizaciones'] = cotizacionWeb::orderByDesc('id')->get();
-        return view('cms.main.cotizacionWeb',$datos);
+        return view('cms.login');
     }
 
     /**
@@ -30,10 +29,9 @@ class cotizacionWebController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        
-        return view('main.createCotizacionWeb');
+        //
     }
 
     /**
@@ -44,9 +42,12 @@ class cotizacionWebController extends Controller
      */
     public function store(Request $request)
     {
-        $datos=request()->except('_token');
-        cotizacionWeb::insert($datos);
-        return redirect('/webPage');
+        $datos=$request->only('identificacion','password');
+        if(Auth::guard('loginCMS')->attempt($datos)){
+            return view('cms.index');
+        }else{
+            return back();
+        }
     }
 
     /**
@@ -55,7 +56,7 @@ class cotizacionWebController extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function show(rc $rc)
+    public function show($id)
     {
         //
     }
@@ -89,9 +90,13 @@ class cotizacionWebController extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(rc $rc)
     {
-        cotizacionWeb::destroy($id);
-        return redirect('cotizacionWeb');
+        //
+    }
+
+    public function logout(){
+        Auth::guard('loginCMS')->logout();
+        return redirect('cms/admin/login');
     }
 }

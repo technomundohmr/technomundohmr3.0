@@ -13,6 +13,10 @@ class Servicios extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth:loginCMS', ['index','destroy','create']);
+    }
     public function index()
     {
         $datos['servicios'] = Servicio::all();

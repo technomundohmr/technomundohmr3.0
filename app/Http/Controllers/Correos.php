@@ -13,6 +13,12 @@ class Correos extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth:loginCMS', ['only'=>'index']);
+    }
+
     public function index()
     {
         $datos['correos'] = Correo::all();

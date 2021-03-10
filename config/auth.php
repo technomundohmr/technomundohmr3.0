@@ -46,6 +46,10 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'loginCMS' => [
+            'driver' => 'session',
+            'provider' => 'loginCMS',
+        ]
     ],
 
     /*
@@ -70,6 +74,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
+        'loginCMS' => [
+            'driver' => 'eloquent',
+            'model' => App\loginCMS::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

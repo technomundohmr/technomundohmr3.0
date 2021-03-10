@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCotizacionWebsTable extends Migration
+class CreateAfiliadosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateCotizacionWebsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cotizacion_webs', function (Blueprint $table) {
+        Schema::create('afiliados', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('email');
+            $table->string('correo');
+            $table->string('pass');
             $table->string('telefono');
-            $table->string('negocio');
-            $table->string('pago');
-            $table->string('solicitado');
-            $table->string('descripcion');
+            $table->string('direccion');
+            $table->string('metodoReembolso');
+            $table->string('cuentaReembolso');
+            $table->string('documento');
+            $table->string('NoDocumento');
             $table->string('afiliado');
             $table->timestamps();
         });
@@ -34,6 +36,6 @@ class CreateCotizacionWebsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cotizacion_webs');
+        Schema::dropIfExists('afiliados');
     }
 }
