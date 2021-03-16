@@ -14,4 +14,12 @@ class IndexController extends Controller
     public function webPage(){
         return view('main.webPage');
     }
+
+    public function software(){
+        return view('main.software');
+    }
+
+    public function felicidades(){
+        return view('main.felicidades');
+    }
 }

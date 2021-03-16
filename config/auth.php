@@ -49,6 +49,10 @@ return [
         'loginCMS' => [
             'driver' => 'session',
             'provider' => 'loginCMS',
+        ],
+        'afiliado' => [
+            'driver' => 'session',
+            'provider' => 'afiliado',
         ]
     ],
 
@@ -78,6 +82,11 @@ return [
         'loginCMS' => [
             'driver' => 'eloquent',
             'model' => App\loginCMS::class,
+        ],
+
+        'afiliado' => [
+            'driver' => 'eloquent',
+            'model' => App\afiliado::class,
         ]
 
         // 'users' => [

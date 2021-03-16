@@ -8,12 +8,18 @@ use Illuminate\Http\Request;
 
 class registroCMSController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    
+    public function __construct()
+    {
+        $this->middleware('auth:loginCMS');
+    }
+     public function index()
     {
         return view('cms.registro');
     }

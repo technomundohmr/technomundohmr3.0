@@ -23,6 +23,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const CMSADMIN = '/cms/admin';
     public const LOGIN = '/cms/admin/login';
+    public const AFILIADO = "/afiliado/";
 
     /**
      * Define your route model bindings, pattern filters, etc.

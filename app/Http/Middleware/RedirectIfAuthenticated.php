@@ -21,6 +21,9 @@ class RedirectIfAuthenticated
         if (Auth::guard('loginCMS')->check()) {
             return redirect(RouteServiceProvider::CMSADMIN);
         }
+        if (Auth::guard('afiliado')->check()) {
+            return redirect(RouteServiceProvider::AFILIADO);
+        }
 
         return $next($request);
     }

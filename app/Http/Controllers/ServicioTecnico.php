@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\rc;
+use App\servicio_tecnico;
 use Illuminate\Http\Request;
 
 class ServicioTecnico extends Controller
@@ -14,7 +15,7 @@ class ServicioTecnico extends Controller
      */
     public function index()
     {
-        //
+        return view ('main.servicioTecnico');
     }
 
     /**
@@ -35,7 +36,9 @@ class ServicioTecnico extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos=request()->except('_token');
+        servicio_tecnico::insert($datos);
+        return redirect('/felicidades');
     }
 
     /**
