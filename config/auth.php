@@ -88,7 +88,6 @@ return [
             'driver' => 'eloquent',
             'model' => App\afiliado::class,
         ]
-
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

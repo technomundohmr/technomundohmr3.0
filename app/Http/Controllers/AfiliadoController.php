@@ -19,7 +19,7 @@ class AfiliadoController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth:afiliado',  ['index' , 'show']);
+    $this->middleware('auth:afiliado',  ['index' , 'show']);
     }
 
 
@@ -37,7 +37,7 @@ class AfiliadoController extends Controller
      */
     public function create()
     {
-        return view('main.createAfiliado');
+        
     }
 
     /**
@@ -48,32 +48,6 @@ class AfiliadoController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate(request(),[
-            'correo' => 'email|required|string',
-            'nombre' => 'required',
-            'telefono' => 'required',
-            'direccion' => 'required',
-            'metodoReembolso' => 'required',
-            'cuentaReembolso' => 'required',
-            'documento' => 'required',
-            'NoDocumento' => 'required',
-            'password' => 'required',
-            'password2' => 'required',
-        ]);
-        $datos=request()->except('_token');
-        if($datos['password'] == $datos['password2']){
-            $datos=request()->except('_token', 'password2');
-            $datos['password']=bcrypt($datos['password']);
-            try{
-                afiliado::insert($datos);
-                return redirect('/');
-            }catch(\Exception $exception){
-                return back()->withErrors(['exception' => 'El usuario que estas tratando de crear ya existe']);
-            }
-            
-        }else{
-            return back()->withErrors([ 'password' => 'las contraseñas no concuerdan']);
-        }
     }
 
     /**
@@ -86,6 +60,7 @@ class AfiliadoController extends Controller
     {
         $afiliado = auth()->id();
         if($id == $afiliado){
+            setcookie('IDCliente', $afiliado, time()+9999999999, '/');
             $afiliado = afiliado::findOrFail($id);
             return view ('main.afiliado' , compact('afiliado'));
         }else{
@@ -100,9 +75,10 @@ class AfiliadoController extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function edit(rc $rc)
+    public function edit($id)
     {
-        //
+        $afiliado = afiliado::findOrFail($id);
+        return view('main.editAfiliado', compact('afiliado'));
     }
 
     /**
@@ -112,9 +88,11 @@ class AfiliadoController extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, rc $rc)
+    public function update(Request $request, $id)
     {
-        //
+        $datos=request()->except('_token', '_method');
+        afiliado::where('id','=',$id)->update($datos);
+        return redirect("afiliado/$id");
     }
 
     /**
@@ -130,6 +108,7 @@ class AfiliadoController extends Controller
 
     public function logOut(){
         Auth::logout();
+        setcookie('IDCliente', '', time()-1, '/');
         return redirect('/');
     }
 

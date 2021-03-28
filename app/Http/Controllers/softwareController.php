@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\rc;
+use App\software;
 use Illuminate\Http\Request;
 
-class afiliacionesController extends Controller
+class softwareController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:loginCMS',  ['only'=>'index','destroy']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,8 @@ class afiliacionesController extends Controller
      */
     public function index()
     {
-        //
+        $datos['pruebas'] = software::orderByDesc('id')->get();
+        return view('cms.main.pruebaSoftware', $datos);
     }
 
     /**
@@ -24,7 +30,7 @@ class afiliacionesController extends Controller
      */
     public function create()
     {
-        //
+        return view('main.puebaSoftwareCreate');
     }
 
     /**
@@ -35,7 +41,9 @@ class afiliacionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos=request()->except('_token');
+        software::insert($datos);
+        return redirect('/felicidades');
     }
 
     /**
@@ -44,10 +52,9 @@ class afiliacionesController extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(rc $rc)
     {
-        setcookie('IDafiliado', $id, time()+9999999999, '/');
-        return redirect('/');
+        //
     }
 
     /**
@@ -79,8 +86,9 @@ class afiliacionesController extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function destroy(rc $rc)
+    public function destroy($id)
     {
-        //
+        software::destroy($id);
+        return redirect('pruebaSoftware');
     }
 }

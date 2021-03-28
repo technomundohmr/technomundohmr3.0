@@ -2,19 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\contacto;
 use App\rc;
 use Illuminate\Http\Request;
 
-class afiliacionesController extends Controller
+class contactoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+        $this->middleware('auth:loginCMS', ['only'=>'index','destroy']);
+     }
     public function index()
     {
-        //
+        $datos['contactos'] = contacto::orderByDesc('id')->get();
+        return view('cms.main.contacto',$datos);
     }
 
     /**
@@ -24,7 +31,7 @@ class afiliacionesController extends Controller
      */
     public function create()
     {
-        //
+        return view('main.contacto');
     }
 
     /**
@@ -35,7 +42,9 @@ class afiliacionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos=request()->except('_token');
+        contacto::insert($datos);
+        return redirect('/felicidades');
     }
 
     /**
@@ -44,10 +53,9 @@ class afiliacionesController extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(rc $rc)
     {
-        setcookie('IDafiliado', $id, time()+9999999999, '/');
-        return redirect('/');
+        //
     }
 
     /**
@@ -79,8 +87,9 @@ class afiliacionesController extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function destroy(rc $rc)
+    public function destroy($id)
     {
-        //
+        contacto::destroy($id);
+        return redirect('contacto');
     }
 }

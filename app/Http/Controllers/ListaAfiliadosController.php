@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\afiliado;
 use App\rc;
 use Illuminate\Http\Request;
 
-class afiliacionesController extends Controller
+class ListaAfiliadosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class afiliacionesController extends Controller
      */
     public function index()
     {
-        //
+        $datos['afiliados'] = afiliado::orderByDesc('id')->get();
+        return view('cms.main.listaAfiliados',$datos);
     }
 
     /**
@@ -35,7 +37,9 @@ class afiliacionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = request()->only('id');
+        $datos['afiliados'] = afiliado::where('id','like',$id)->get();
+        return view('cms.main.listaAfiliados',$datos);
     }
 
     /**
@@ -46,8 +50,7 @@ class afiliacionesController extends Controller
      */
     public function show($id)
     {
-        setcookie('IDafiliado', $id, time()+9999999999, '/');
-        return redirect('/');
+        
     }
 
     /**
@@ -56,9 +59,9 @@ class afiliacionesController extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function edit(rc $rc)
+    public function edit($id)
     {
-        //
+        
     }
 
     /**

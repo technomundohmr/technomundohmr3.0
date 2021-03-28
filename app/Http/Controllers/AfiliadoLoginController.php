@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\afiliado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,4 +30,6 @@ class AfiliadoLoginController extends Controller
             return back()->withErrors(['errores'=>'Datos incorrectos']);
         }
     }
+
+
 }

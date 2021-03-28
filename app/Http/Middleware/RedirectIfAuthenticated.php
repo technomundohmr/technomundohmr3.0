@@ -25,6 +25,7 @@ class RedirectIfAuthenticated
             return redirect(RouteServiceProvider::AFILIADO);
         }
 
+
         return $next($request);
     }
 }

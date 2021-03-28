@@ -9,14 +9,14 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <div class="botonCms bg-danger px-3 py-5 text-center m-2">
+                <div class="botonCms bg-primary px-3 py-5 text-center m-2">
                     <a href="{{url('/servicios/create')}}">
                         <h3><span><i class="fas fa-hand-holding-medical display-3"></i></span> crear servicio</h3>
                     </a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="botonCms bg-warning
+                <div class="botonCms bg-danger
                  px-3 py-5 text-center m-2">
                     <a href="{{url('/cotizacionWeb')}}">
                         <h3><span><i class="fas fa-network-wired display-3"></i></span> Cotizacion Web</h3>
@@ -24,10 +24,26 @@
                 </div>
             </div>
             <div class="col-md-4">
+                <div class="botonCms bg-info
+                 px-3 py-5 text-center m-2">
+                    <a href="{{url('/pruebaSoftware')}}">
+                        <h3><span><i class="fas fa-laptop-code display-3"></i></span> Cotizacion Software</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="botonCms bg-warning
+                 px-3 py-5 text-center m-2">
+                    <a href="{{url('/contacto')}}">
+                        <h3><span><i class="fas fa-envelope-open-text display-3"></i></span> Contactos</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
                 <div class="botonCms bg-success
                  px-3 py-5 text-center m-2">
-                    <a href="{{url('/cotizacionSoftware')}}">
-                        <h3><span><i class="fas fa-laptop-code display-3"></i></span> Cotizacion Software</h3>
+                    <a href="{{url('/listaAfiliados')}}">
+                        <h3><span><i class="fas fa-user-friends display-3"></i></span> Afiliados</h3>
                     </a>
                 </div>
             </div>

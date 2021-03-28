@@ -51,7 +51,7 @@
                       <p class="card-text"><strong>correo: </strong>{{$afiliado->correo}}</p>
                       <p class="card-text"><strong>telefono: </strong>{{$afiliado->telefono}}</p>
                       <p class="card-text"><strong>direccion: </strong>{{$afiliado->direccion}}</p>
-                      <form action="afiliado/edit/{{$afiliado->id}}" method="post">
+                      <form action="{{url('afiliado/'.$afiliado->id.'/edit')}}" method="get">
                         <button type="submit" class="btn btn-warning"><i class="fa fa-pencil"></i> Editar</button>
                       </form>
                     </div>
@@ -65,6 +65,8 @@
                         <p class="card-text"><strong>cuenta: </strong>{{$afiliado->cuentaReembolso}}</p>
                         <p>El reembolso puede tomar hasta 3 dias habiles en verse reflejado</p>
                         <a href="#" class="btn btn-success">Pedir Reembolso</a>
+                        <hr>
+                        <h4 class="text-center"><strong>saldo: $</strong>{{$afiliado->ganancia}}</h4>
                     </div>
                   </div>    
             </div>

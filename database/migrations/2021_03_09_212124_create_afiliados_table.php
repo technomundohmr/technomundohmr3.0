@@ -18,13 +18,14 @@ class CreateAfiliadosTable extends Migration
             $table->string('nombre');
             $table->string('correo')->unique();
             $table->string('password');
-            $table->string('telefono');
+            $table->string('telefono')->unique();
             $table->string('direccion');
             $table->string('metodoReembolso');
             $table->string('cuentaReembolso');
             $table->string('documento');
             $table->string('NoDocumento')->unique();
             $table->string('afiliado');
+            $table->integer('ganancia');
             $table->timestamps();
         });
     }

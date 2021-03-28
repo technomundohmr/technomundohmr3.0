@@ -37,7 +37,7 @@
                 <div class="form-group"><input type="password" class="form-control" name="password" id="password" placeholder="contraseña"></div>
                 <button type="submit" class="btn btn-primary btn-block btn-lg">Ingresar</button>
             </form>
-            <a href="{{url('/afiliado/create')}}" class="my-2 btn btn-danger btn-block btn-lg">Registrarme como Afiliado</a>
+            <a href="{{url('/afiliadoRegistro')}}" class="my-2 btn btn-danger btn-block btn-lg">Registrarme</a>
         </div>
         <div class="col-md-4"></div>
     </div>

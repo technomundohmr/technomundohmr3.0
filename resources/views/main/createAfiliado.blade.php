@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title')
-    Quiero ganar dinero con Technomundo HMR
+    Quiero ser parte de la familia technomundo HMR
 @endsection
 @section('content')
 <header>
@@ -45,7 +45,7 @@
             !!}
                 <h1 class="text-center">Inscribirme como afiliado de technomundo HMR</h1>
                 <h5 class="text-center">Para ganar dinero con nosotros, solo debes compartir tu enlace de afiliado.</h5>
-                <form action="{{ url('/afiliado') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('/afiliadoRegistro') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <hr>
                     <p class="text-primary">Datos personales</p>
@@ -66,7 +66,7 @@
                         <input type="text" name="direccion" id="direccion" class="form-control" placeholder="Direccion de residencia" required>
                     </div>
                     <hr>
-                    <p class="text-primary">Datos de reembolso</p>
+                    <p class="text-primary">Datos de reembolso si quieres ganar dinero con nosotros o para garantias.</p>
                     <div class="form-group">
                         <label for="metodoReembolso">¿Dónde puedes recibir tus pagos?</label>
                         <select name="metodoReembolso" id="metodoReembolso" class="form-control" required>
