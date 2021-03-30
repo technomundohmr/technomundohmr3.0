@@ -1,6 +1,6 @@
 <div id="webdesign">
     <div class="imagenParrafo">
-        <a href="{{url('/webPage')}}"><img src="img/dise%C3%B1o%20web.jpg" alt="" width="100%" loading="lazy"></a>    
+        <a href="{{url('/webPage')}}"><img src="img/disenoweb.jpg" alt="" width="100%" loading="lazy"></a>    
     </div>
     <div class="parrafo">
         <a href="{{url('/webPage')}}">

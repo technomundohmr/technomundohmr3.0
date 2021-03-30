@@ -28,3 +28,5 @@ Route::get('/software','IndexController@software');
 Route::get('/cms/admin','IndexCMSController@index');
 Route::post('logout','loginCMSController@logout');
 Route::get('felicidades', 'IndexController@felicidades');
+Route::get('landingServicioTecnico1', 'landingPagesController@servicioTecnico1');
+Route::get('landingPaginaWeb1', 'landingPagesController@paginaWeb1');

@@ -43,9 +43,10 @@ class Correos extends Controller
      */
     public function store(Request $request)
     {
-        $datos=request()->except('_token');
+        $datos=request()->except('_token','destino');
+        $destino = request('destino');
         Correo::insert($datos);
-        return redirect('/webPage');
+        return redirect("/$destino");
     }
 
     /**

@@ -15,7 +15,7 @@ class ListaAfiliadosController extends Controller
      */
     public function index()
     {
-        $datos['afiliados'] = afiliado::orderByDesc('id')->get();
+        $datos['afiliados'] = afiliado::orderByDesc('id')->paginate('20');
         return view('cms.main.listaAfiliados',$datos);
     }
 
@@ -71,9 +71,23 @@ class ListaAfiliadosController extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, rc $rc)
+    public function update(Request $request, $id)
     {
-        //
+        $datos=request()->except('_token', '_method', 'operacion');
+        $operacion= request('operacion');
+        $afiliado = afiliado::findOrFail($id);
+        if($operacion == '-'){
+            $saldo=$afiliado['ganancia']-request('valor');
+            afiliado::where('id','=',$id)->update(['ganancia' => $saldo]);
+            return redirect('listaAfiliados');
+        }if($operacion == '+'){
+            $saldo=$afiliado['ganancia']+request('valor');
+            afiliado::where('id','=',$id)->update(['ganancia' => $saldo]);
+            return redirect('listaAfiliados');
+            
+        }
+        
+        
     }
 
     /**
