@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\categorias_tiendas;
 use App\rc;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CategoriasTienda extends Controller
 {
@@ -24,7 +26,8 @@ class CategoriasTienda extends Controller
      */
     public function create()
     {
-        //
+        $datos['categorias'] = categorias_tiendas::all();
+        return view('cms.tienda.categorias', $datos);
     }
 
     /**
@@ -35,7 +38,12 @@ class CategoriasTienda extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos=request()->except('_token');
+        if ($request->hasFile('img')) {
+            $datos['img']=$request->file('img')->store('uploads','public');
+        }
+        categorias_tiendas::insert($datos);
+        return redirect('cms/tienda/categorias/create');
     }
 
     /**
@@ -78,8 +86,11 @@ class CategoriasTienda extends Controller
      * @param  \App\rc  $rc
      * @return \Illuminate\Http\Response
      */
-    public function destroy(rc $rc)
+    public function destroy($id)
     {
-        //
+        $dato = categorias_tiendas::findOrFail($id);
+        Storage::delete('public/'.$dato->img);
+        categorias_tiendas::destroy($id);
+        return redirect('cms/tienda/categorias/create');
     }
 }

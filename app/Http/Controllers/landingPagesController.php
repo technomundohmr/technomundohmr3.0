@@ -12,4 +12,8 @@ class landingPagesController extends Controller
     public function paginaWeb1 (){
         return view('landingPages/paginaWeb1');
     }
+
+    public function Afiliados1 (){
+        return view('landingPages/afiliados1');
+    }
 }

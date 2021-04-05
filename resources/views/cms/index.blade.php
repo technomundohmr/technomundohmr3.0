@@ -93,7 +93,7 @@
             </div>
             <div class="col-md-4">
                 <div class="botonCms bg-success px-3 py-5 text-center m-2">
-                    <a href="">
+                    <a href="{{url('/cms/tienda/categorias/create')}}">
                         <h3><span><i class="fas fa-boxes display-3"></i></span> Categorias</h3>
                     </a>
                 </div>
