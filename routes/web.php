@@ -18,6 +18,7 @@ Route::resource('pruebaSoftware', 'softwareController');
 Route::resource('contacto', 'contactoController');
 Route::resource('listaAfiliados', 'ListaAfiliadosController');
 Route::resource('cms/tienda/categorias', 'CategoriasTienda');
+Route::resource('cms/tienda/productos', 'Productos');
 Route::get('afiliadoLogin', 'AfiliadoLoginController@login');
 Route::post('afiliadoLogin', 'AfiliadoLoginController@loginpost');
 Route::post('afiliadoLogout', 'AfiliadoController@logout');

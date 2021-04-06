@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Storage;
 
 class CategoriasTienda extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:loginCMS');
+    }
     /**
      * Display a listing of the resource.
      *

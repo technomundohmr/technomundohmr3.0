@@ -86,7 +86,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="botonCms bg-danger px-3 py-5 text-center m-2">
-                    <a href="">
+                    <a href="{{url("/cms/tienda/productos/create")}}">
                         <h3><span><i class="fas fa-pallet display-3"></i></span> Productos</h3>
                     </a>
                 </div>
