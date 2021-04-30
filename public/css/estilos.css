@@ -211,9 +211,41 @@ footer{
 .circular{
     border-radius: 50%;
 }
+.contenedor-categoria{
+    background-size: cover;
+}
+
+.categoria a{
+    text-decoration: none;
+}
+
+.nombre-categoria{
+    background-color: rgba(0, 100, 255, 0.4);
+    color: white;
+    padding: 95px 25px 95px 25px;
+    width: 100%;
+}
+.precio{
+    border:2px solid;
+    padding: 3px 1px;
+}
+.productos a{
+    text-decoration: none;
+}
+.nombre-categoria:hover{
+    background: none;
+}
+.nombre-categoria h1:hover{
+    background-color: rgba(0, 100, 255, 0.4);
+    
+}
 @media (max-width : 840px){
     /*body*/
     /*--*/
+    .nombre-categoria{
+        padding:  125px 25px 125px 25px;
+        width: 100%;
+    }
     #webdesign{
         display: block;
     }

@@ -43,7 +43,7 @@ class softwareController extends Controller
     {
         $datos=request()->except('_token');
         software::insert($datos);
-        return redirect('/felicidades');
+        return redirect('/descargar/cursoTechnoPos.rar');
     }
 
     /**

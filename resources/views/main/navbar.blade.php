@@ -9,7 +9,7 @@
                 <a class="nav-link" href="{{url('/')}}"><i class="fas fa-home"></i> Home</a>
             </li>
             <li class="nav-item mx-1 hover1">
-                <a class="nav-link" href="{{url('https://tienda.technomundohmr.com')}}"><i class="fas fa-store"></i> Tienda</a>
+                <a class="nav-link" href="{{url('/tienda')}}" target="_blank"><i class="fas fa-store"></i> Tienda</a>
             </li>
             <li class="nav-item mx-1 hover1">
                 <a class="nav-link" href="{{url('/software')}}"><i class="fas fa-business-time"></i> Gestiona tu empresa</a>
